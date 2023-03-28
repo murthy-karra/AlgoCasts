@@ -13,7 +13,21 @@
 //   buzz
 
 function fizzBuzz(n) {
-  //This is a test
+  // Test for 15
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("fizzbuzz");
+      // Test for 3
+    } else if (i % 3 === 0) {
+      console.log("fizz");
+      // Test for 5
+    } else if (i % 5 === 0) {
+      console.log("buzz");
+      //Everything else
+    } else {
+      console.log(i);
+    }
+  }
 }
 
 module.exports = fizzBuzz;
