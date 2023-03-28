@@ -10,6 +10,7 @@ function reverse(str) {
   // return str.split("").reduce((reversed, character) => {
   //   return character + reversed;
   // }, "");
+
   return str.split("").reduce((rev, char) => char + rev, "");
   // str = hello
   // 1st element rev='', char='h'
