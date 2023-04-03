@@ -15,26 +15,30 @@ function buildCharMap(str) {
   }
   return charMap;
 }
-
-function checkLengths(strA, strB) {
-  if (strA.replace(/[^\w]/g).length != strB.replace(/[^\w]/g).length) {
-    return false;
-  }
+function cleanString(str) {
+  return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
 }
+
 function anagrams(stringA, stringB) {
-  if (checkLengths(stringA, stringB)) {
+  console.log(cleanString(stringA), cleanString(stringB));
+  if (cleanString(stringA) == cleanString(stringB)) {
+    return true;
+  } else {
     return false;
   }
-
-  const aMap = buildCharMap(stringA);
-  const bMap = buildCharMap(stringB);
-
-  for (let key in aMap) {
-    if (aMap[key] != bMap[key]) {
-      return false;
-    }
-  }
-  return true;
 }
 
 module.exports = anagrams;
+
+// function anagrams(stringA, stringB) {
+//   const aMap = buildCharMap(stringA);
+//   const bMap = buildCharMap(stringB);
+
+//   if (Object.keys(aMap).length != Object.keys(bMap).length) return false;
+//   for (let key in aMap) {
+//     if (aMap[key] != bMap[key]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
